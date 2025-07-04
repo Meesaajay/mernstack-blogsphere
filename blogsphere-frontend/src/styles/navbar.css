@@ -1,0 +1,171 @@
+/* styles/navbar.css */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+  padding: 0.8rem 5%;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo a {
+  color: var(--light);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: var(--accent);
+}
+
+.logo span {
+  background: linear-gradient(to right, var(--light) 0%, var(--gray) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: var(--gray);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links li a:hover {
+  color: var(--light);
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a.active {
+  color: var(--light);
+}
+
+.nav-links li a.active::after {
+  width: 100%;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: var(--gray);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-main);
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-btn:hover {
+  color: var(--light);
+}
+
+.nav-btn.logout:hover {
+  color: var(--error);
+}
+
+.nav-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-btn.logout::after {
+  background-color: var(--error);
+}
+
+.nav-btn:hover::after {
+  width: 100%;
+}
+
+.nav-btn.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-btn.back-btn:hover {
+  color: var(--accent);
+}
+
+.nav-btn.back-btn::after {
+  background-color: var(--accent);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .logo span {
+    display: none;
+  }
+  
+  .nav-links li a span {
+    display: none;
+  }
+  
+  .nav-links li a {
+    font-size: 0.9rem;
+  }
+  
+  .nav-btn {
+    font-size: 0.9rem;
+  }
+}
