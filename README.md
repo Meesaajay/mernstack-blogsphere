@@ -2,15 +2,6 @@
 
 BlogSphere is a full-stack blogging app built using the **MERN Stack (MongoDB, Express, React, Node.js)**. Users can register, log in, create blogs, comment, like posts, and view their profile.
 
-
-## Folder Structure
-
-blogsphere/
-├── backend/ # Node.js + Express backend (API + MongoDB)
-├── frontend/ # React frontend (UI)
-└── README.md # This file
-
-
 ##  Main Features
 
 - User Registration & Login (with JWT)
